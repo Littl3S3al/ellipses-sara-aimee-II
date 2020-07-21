@@ -1,0 +1,87 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+#preload {
+  display: none;
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 100;
+}
+
+#canvas {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: red;
+}
+
+#barrier {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+
+#mask {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  overflow: hidden;
+  z-index: 101;
+}
+#mask .draggable {
+  position: absolute;
+  overflow: scroll;
+  background: black;
+  border: solid 1px white;
+  transition: 0.2s;
+  height: 500px;
+  width: 500px;
+}
+
+#close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: purple;
+  z-index: 3000;
+  cursor: pointer;
+  display: none;
+}
+
+.token {
+  background: yellow;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.draggable.is-dragging {
+  z-index: 200;
+}
+
+/*# sourceMappingURL=style.css.map */
