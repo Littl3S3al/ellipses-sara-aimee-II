@@ -11,9 +11,13 @@ let draggables = false;
 // token variables
 let currToken = '';
 
+// progress line variables
+const progressBar = document.querySelector('.progress-line');
+let progress = 0;
 
-// create 23 tokens
-for(i=0; i < 6; i++){
+
+for(i=0; i < batches.length; i++){
+    // create 23 tokens
     let token = document.createElement('DIV');
     token.innerHTML = 'x';
     token.id = 'token_' + i;
@@ -21,6 +25,9 @@ for(i=0; i < 6; i++){
     token.dataset.played = 'false';
     token.dataset.number = i;
     body.appendChild(token);
+    // create 23 progress dots
+    let dot = `<div class='status'><div class='dot'></div></div>`;
+    progressBar.innerHTML += dot;
 };
 
 // code to open mask layer
@@ -33,6 +40,7 @@ const showMask = () => {
     setTimeout(()=> {
         close.style.display = 'block';
     }, 3000);
+    progress ++;
 };
 
 // code to hide mask and delete  all content
@@ -51,7 +59,7 @@ const hideMask = () => {
 // all of the images come up
 const populate = (num) => {
     let i = 0;
-    let bottom = 50;
+    let bottom = 150;
     let left = 50;
     let content = batches[num];
 
@@ -68,8 +76,8 @@ const populate = (num) => {
         mask.innerHTML += `<div class="draggable d${i}" style="bottom: ${bottom}px; left: ${left}px;" ondrop="drop(event)">${file}</div>`;
         drags.push(`div.draggable.d${i}`);
         i ++;
-        bottom += 50;
-        left += 50;
+        bottom += 75;
+        left += 75;
         if(i >=  content.length){
             clearInterval(imagePop);
             drags.forEach(drag => {
@@ -77,10 +85,24 @@ const populate = (num) => {
                 draggables = true;
             });
         };
-    }, 150);
+    }, 300);
 }
 
+const progression = () => {
+    const dots = document.querySelectorAll('.dot');
+    const line = document.querySelector(".progress");
 
+    for(i = 0; i < progress; i++){
+        if(!dots[i].classList.contains('completed')){
+            dots[i].classList.add('completed');
+        } 
+        if(dots[i].classList.contains('current')){
+            dots[i].classList.remove('current');
+        }
+    }
+    dots[progress].classList.add('current');
+    line.style.width = (progress / (batches.length - 1) * 100) + "%";
+}
 
 // looking for tokens
 body.addEventListener('mouseover', e => {
@@ -102,5 +124,6 @@ body.addEventListener('mouseover', e => {
 // close mask layer
 close.addEventListener('click', () => {
     hideMask();
+    progression();
 })
 
