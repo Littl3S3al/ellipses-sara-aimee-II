@@ -31,7 +31,7 @@ tsParticles.load("tsparticles", {
         grab: { distance: 400, links: { opacity: 1 } },
         push: { quantity: 40 },
         remove: { quantity: 20 },
-        repulse: { distance: 165, duration: 0.3, speed: 0.5 },
+        repulse: { distance: 50, duration: 0.3, speed: 0.5 },
         slow: { factor: 3, radius: 600 }
       }
     },
@@ -67,19 +67,19 @@ tsParticles.load("tsparticles", {
         },
         outMode: "out",
         random: false,
-        speed: 0.4,
+        speed: 0.1,
         straight: false,
         trail: { enable: false, length: 10, fillColor: { value: "#000000" } },
         vibrate: false,
         warp: false
       },
       number: {
-        density: { enable: true, area: 500, factor: 1500 },
+        density: { enable: true, area: 700, factor: 1500 },
         limit: 0,
-        value: 5000
+        value: 2000
       },
       opacity: {
-        animation: { enable: true, minimumValue: 0.1, speed: 1, sync: false },
+        animation: { enable: true, minimumValue: 0.1, speed: 0.4, sync: false },
         random: { enable: false, minimumValue: 1 },
         value: 1
       },
@@ -144,7 +144,7 @@ tsParticles.load("tsparticles", {
           sync: false
         },
         random: { enable: true, minimumValue: 1 },
-        value: 1
+        value: 3
       },
       stroke: { color: { value: "#000000" }, width: 0, opacity: 1 },
       twinkle: {

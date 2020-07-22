@@ -8,6 +8,9 @@ const body = document.querySelector('body');
 let drags = [];
 let draggables = false;
 
+// token variables
+let currToken = '';
+
 
 // create 23 tokens
 for(i=0; i < 6; i++){
@@ -87,6 +90,7 @@ body.addEventListener('mouseover', e => {
     let played = e.target.dataset.played;
     if(cls === 'token' && played === 'false'){
         el.style.opacity = 1;
+        el.style.zIndex = 0;
         e.target.dataset.played = 'true';
         setTimeout(() => {
             showMask();
