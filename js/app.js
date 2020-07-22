@@ -2,13 +2,12 @@ const canvas = document.querySelector('#canvas');
 const mask = document.querySelector('#mask');
 const barrier = document.querySelector('#barrier');
 const close = document.querySelector('#close');
+const body = document.querySelector('body');
 
 // dargability variables
 let drags = [];
 let draggables = false;
 
-// token specific variables
-let played = false;
 
 // create 23 tokens
 for(i=0; i < 6; i++){
@@ -18,9 +17,10 @@ for(i=0; i < 6; i++){
     token.className = 'token';
     token.dataset.played = 'false';
     token.dataset.number = i;
-    canvas.appendChild(token);
+    body.appendChild(token);
 };
 
+// code to open mask layer
 const showMask = () => {
     mask.style.width ='100vw';
     mask.style.height = '100vh';
@@ -32,6 +32,7 @@ const showMask = () => {
     }, 3000);
 };
 
+// code to hide mask and delete  all content
 const hideMask = () => {
     mask.style.width ='0';
     mask.style.height = '0';
@@ -40,6 +41,7 @@ const hideMask = () => {
     close.style.display = 'none';
     setTimeout(()=> {
         barrier.style.display = 'none';
+        mask.innerHTML = '';
     }, 1000);
 };
 
@@ -77,12 +79,8 @@ const populate = (num) => {
 
 
 
-
-
-
-
-
-canvas.addEventListener('mouseover', e => {
+// looking for tokens
+body.addEventListener('mouseover', e => {
     let el = e.target;
     let cls = e.target.className;
     let tokenNo = e.target.dataset.number;
@@ -90,11 +88,14 @@ canvas.addEventListener('mouseover', e => {
     if(cls === 'token' && played === 'false'){
         el.style.opacity = 1;
         e.target.dataset.played = 'true';
-        showMask();
-        populate(tokenNo);
+        setTimeout(() => {
+            showMask();
+            populate(tokenNo);
+        }, 1000);
     }
 });
 
+// close mask layer
 close.addEventListener('click', () => {
     hideMask();
 })
