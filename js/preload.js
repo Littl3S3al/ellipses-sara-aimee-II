@@ -23,5 +23,5 @@ batches.forEach(batch => {
 window.addEventListener('load', () => {
     setTimeout(() => {
         loadingScrn.style.display = 'none';
-    })
+    }, 5000)
 })
