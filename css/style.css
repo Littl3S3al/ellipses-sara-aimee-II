@@ -109,8 +109,9 @@ body, html {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url("../assets/dust.gif") center center no-repeat;
+  background: rgba(255, 255, 255, 0.5) url("../assets/dust.gif") center center no-repeat;
   background-size: cover;
+  background-blend-mode: lighten;
   z-index: 500;
 }
 #loading div {
@@ -126,7 +127,7 @@ body, html {
   z-index: 0;
   background: url("../assets/dust.gif") center center no-repeat;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 #tsparticles {
