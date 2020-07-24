@@ -2,7 +2,7 @@
 @import "tokens";
 @import "progress";
 
-$dimension: 500px;
+$dimension: 300px;
 
 body, html{
     margin: 0;
@@ -21,7 +21,7 @@ body, html{
     @include fixed_full;
     @include flexCenter;
     height: 100vh;
-    background: url('../assets/coal_dust.gif') center center no-repeat;
+    background: url('../assets/dust.gif') center center no-repeat;
     background-size: cover;
     z-index: 500;
     div{
@@ -31,7 +31,7 @@ body, html{
 #canvas{
     @include fixed_full;
     z-index: 0;
-    background: url('../assets/coal_dust.gif') center center no-repeat;
+    background: url('../assets/dust.gif') center center no-repeat;
     background-size: cover;
     opacity: 0.5;
 }

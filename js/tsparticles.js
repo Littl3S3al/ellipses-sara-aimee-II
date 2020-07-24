@@ -55,7 +55,7 @@ tsParticles.load("tsparticles", {
       },
       move: {
         attract: { enable: false, rotate: { x: 600, y: 1200 } },
-        direction: "none",
+        direction: "bottom",
         enable: true,
         noise: {
           delay: { random: { enable: false, minimumValue: 0 }, value: 0 },
@@ -67,9 +67,9 @@ tsParticles.load("tsparticles", {
         },
         outMode: "out",
         random: false,
-        speed: 0.1,
+        speed: 0.5,
         straight: false,
-        trail: { enable: false, length: 10, fillColor: { value: "#000000" } },
+        trail: { enable: false, length: 10, fillColor: { value: "#FFFFFF" } },
         vibrate: false,
         warp: false
       },
@@ -81,7 +81,7 @@ tsParticles.load("tsparticles", {
       opacity: {
         animation: { enable: true, minimumValue: 0.1, speed: 0.4, sync: false },
         random: { enable: false, minimumValue: 1 },
-        value: 1
+        value: 0.4
       },
       rotate: {
         animation: { enable: false, speed: 0, sync: false },
@@ -144,7 +144,7 @@ tsParticles.load("tsparticles", {
           sync: false
         },
         random: { enable: true, minimumValue: 1 },
-        value: 3
+        value: 1
       },
       stroke: { color: { value: "#000000" }, width: 0, opacity: 1 },
       twinkle: {
