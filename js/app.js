@@ -19,8 +19,8 @@ let progress = 0;
 for(i=0; i < batches.length; i++){
     // create 23 tokens
     let token = document.createElement('DIV');
-    token.innerHTML = i;
-    token.id = 'token_' + i;
+    token.innerHTML = i+1;
+    token.id = 'token_' + (i+1);
     token.className = 'token';
     token.dataset.played = 'false';
     token.dataset.number = i;
