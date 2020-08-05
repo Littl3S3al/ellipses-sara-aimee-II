@@ -21,7 +21,8 @@ batches.forEach(batch => {
 
 // hide loading screen once the content has loaded
 window.addEventListener('load', () => {
+    loadingScrn.style.opacity = '0';
     setTimeout(() => {
         loadingScrn.style.display = 'none';
-    }, 5000)
+    }, 300);
 })

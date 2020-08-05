@@ -19,7 +19,7 @@ let progress = 0;
 for(i=0; i < batches.length; i++){
     // create 23 tokens
     let token = document.createElement('DIV');
-    token.innerHTML = 'x';
+    token.innerHTML = i;
     token.id = 'token_' + i;
     token.className = 'token';
     token.dataset.played = 'false';
@@ -70,8 +70,11 @@ const populate = (num) => {
         // check if image
         if(ext === "jpg"){
             file = `<img src="assets/${content[i]}">`;
-        };
-        // check if video
+        } else{
+            file = `
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/${content[i]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+        }
 
         mask.innerHTML += `<div class="draggable d${i}" style="bottom: ${bottom}px; left: ${left}px;" ondrop="drop(event)">${file}</div>`;
         drags.push(`div.draggable.d${i}`);
