@@ -3,6 +3,7 @@ const mask = document.querySelector('#mask');
 const barrier = document.querySelector('#barrier');
 const close = document.querySelector('#close');
 const body = document.querySelector('body');
+let currentToken = 0;
 
 // dargability variables
 let drags = [];
@@ -19,7 +20,7 @@ let progress = 0;
 for(i=0; i < batches.length; i++){
     // create 23 tokens
     let token = document.createElement('DIV');
-    token.innerHTML = i+1;
+    token.innerHTML = 'x';
     token.id = 'token_' + (i+1);
     token.className = 'token';
     token.dataset.played = 'false';
@@ -113,14 +114,16 @@ body.addEventListener('mouseover', e => {
     let cls = e.target.className;
     let tokenNo = e.target.dataset.number;
     let played = e.target.dataset.played;
-    if(cls === 'token' && played === 'false'){
+    if(cls === 'token' && played === 'false' && Number(tokenNo) === currentToken){
         el.style.opacity = 1;
         el.style.zIndex = 0;
         e.target.dataset.played = 'true';
         setTimeout(() => {
             showMask();
             populate(tokenNo);
+            currentToken ++;
         }, 1000);
+        
     }
 });
 
