@@ -308,4 +308,41 @@ h1 {
   z-index: 300;
 }
 
+#digicleanse {
+  width: 100vw;
+  height: 93vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(133, 193, 233, 0.5);
+  z-index: 1000;
+  animation: flash 0.5s infinite;
+  width: 0;
+  overflow: hidden;
+  transition: width 5s;
+}
+#digicleanse p {
+  color: black;
+  opacity: 0.6;
+}
+#digicleanse img {
+  height: 80vh;
+}
+
+@keyframes flash {
+  0% {
+    background: rgba(133, 193, 233, 0.5);
+  }
+  100% {
+    background: rgba(241, 196, 15, 0.5);
+  }
+}
+#deCleanse {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

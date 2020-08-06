@@ -104,3 +104,31 @@ h1{
 .draggable.is-dragging { 
     z-index: 300;
 }
+
+#digicleanse{
+    @include fixed_full;
+    @include flexCenter;
+    height: 100vh;
+    background: rgba(133, 193, 233, 0.5);
+    z-index: 1000;
+    animation: flash 0.5s infinite;
+    width: 0;
+    overflow: hidden;
+    transition: width 5s;
+    p{
+        color: black;
+        opacity: 0.6;
+    }
+    img{
+        height: 80vh;
+    }
+}
+
+@keyframes flash{
+    0%{background: rgba(133, 193, 233, 0.5);}
+    100%{background: rgba(241, 196, 15, 0.5);}
+}
+
+#deCleanse{
+    cursor: pointer;
+}

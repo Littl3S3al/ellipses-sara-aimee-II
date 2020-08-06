@@ -3,7 +3,8 @@ const mask = document.querySelector('#mask');
 const barrier = document.querySelector('#barrier');
 const close = document.querySelector('#close');
 const body = document.querySelector('body');
-let currentToken = 0;
+const ad = document.querySelector('#digicleanse');
+const end = document.querySelector('#deCleanse');
 
 // dargability variables
 let drags = [];
@@ -11,6 +12,7 @@ let draggables = false;
 
 // token variables
 let currToken = '';
+currentToken = 0;
 
 // progress line variables
 const progressBar = document.querySelector('.progress-line');
@@ -108,6 +110,15 @@ const progression = () => {
     line.style.width = (progress / (batches.length - 1) * 100) + "%";
 }
 
+const cleanse = () => {
+   ad.style.width = "100vw";
+};
+
+const deCleanse = () => {
+    ad.style.opacity = 0;
+}
+
+
 // looking for tokens
 body.addEventListener('mouseover', e => {
     let el = e.target;
@@ -123,7 +134,6 @@ body.addEventListener('mouseover', e => {
             populate(tokenNo);
             currentToken ++;
         }, 1000);
-        
     }
 });
 
@@ -131,5 +141,16 @@ body.addEventListener('mouseover', e => {
 close.addEventListener('click', () => {
     hideMask();
     progression();
-})
+    if(currentToken === 10 || currentToken === 20){
+        cleanse();
+    }
+});
+
+end.addEventListener('click', () => {
+    deCleanse();
+});
+
+setTimeout(() => {
+    cleanse();
+}, 60000)
 

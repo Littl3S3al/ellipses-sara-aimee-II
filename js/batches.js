@@ -21,6 +21,6 @@ const batches = [
         ["batch_19/a.jpg"],
         ["batch_20/a.jpg", "batch_20/b.jpg", "batch_20/c.jpg"],
         ["batch_21/a.jpg", "batch_21/b.jpg", "batch_21/c.jpg", "batch_21/d.jpg"],
-        ["ALtUEjiMb4Q", "batch_22/a.jpg", "batch_22/b.jpg", "batch_22/c.jpg"],
+        ["ALtUEjiMb4Q", "batch_22/a.jpg"],
         ["Nve0dbr0pzw", "batch_23/a.jpg", "batch_23/b.jpg", "batch_23/c.jpg"]        
 ];
