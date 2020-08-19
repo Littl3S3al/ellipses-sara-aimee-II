@@ -22,11 +22,15 @@ h1{
 #preload{
     display: none;
 }
+.hidden{
+    display: none!important;
+}
 
 #loading{
     @include fixed_full;
     @include flexCenter;
-    height: 100vh;
+    height: 100vh!important;
+    background-color: white;
     background: url('../assets/dust.gif'), rgba( 255, 255, 255, 0.5) center center no-repeat;
     background-size: cover;
     background-blend-mode: lighten;

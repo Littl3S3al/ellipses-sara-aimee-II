@@ -1,10 +1,4 @@
-const canvas = document.querySelector('#canvas');
-const mask = document.querySelector('#mask');
-const barrier = document.querySelector('#barrier');
-const close = document.querySelector('#close');
-const body = document.querySelector('body');
-const ad = document.querySelector('#digicleanse');
-const end = document.querySelector('#deCleanse');
+
 
 // dargability variables
 let drags = [];
@@ -115,7 +109,7 @@ const cleanse = () => {
 };
 
 const deCleanse = () => {
-    ad.style.opacity = 0;
+    ad.style.width = 0;
 }
 
 

@@ -200,6 +200,10 @@ h1 {
   display: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #loading {
   width: 100vw;
   height: 93vh;
@@ -209,7 +213,8 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh !important;
+  background-color: white;
   background: url("../assets/dust.gif"), rgba(255, 255, 255, 0.5) center center no-repeat;
   background-size: cover;
   background-blend-mode: lighten;
