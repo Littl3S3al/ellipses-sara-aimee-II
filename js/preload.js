@@ -29,14 +29,19 @@ batches.forEach(batch => {
     })
 })
 
+
+
 // hide loading screen once the content has loaded
 window.addEventListener('load', () => {
-    loadingScrn.style.opacity = '0';
-    setTimeout(() => {
-        loadingScrn.classList.add('hidden');
-    }, 300);
-    canvas.classList.remove('hidden');
-    particles.classList.remove('hidden');
-    journey.classList.remove('hidden');
-
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        loadingScrn.innerText = 'please view this on a desktop or PC'
+    } else {
+        setTimeout(() => {
+            loadingScrn.style.opacity = '0';
+            setTimeout(() => {
+                loadingScrn.classList.add('hidden');
+            }, 300);
+            journey.classList.remove('hidden');
+        }, 5000)
+    }
 })

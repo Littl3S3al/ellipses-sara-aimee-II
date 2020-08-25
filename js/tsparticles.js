@@ -31,7 +31,7 @@ tsParticles.load("tsparticles", {
         grab: { distance: 400, links: { opacity: 1 } },
         push: { quantity: 40 },
         remove: { quantity: 20 },
-        repulse: { distance: 50, duration: 0.3, speed: 0.5 },
+        repulse: { distance: 100, duration: 0.3, speed: 0.5 },
         slow: { factor: 3, radius: 600 }
       }
     },

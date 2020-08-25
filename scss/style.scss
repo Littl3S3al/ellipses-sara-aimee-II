@@ -10,7 +10,7 @@ body, html{
     box-sizing: border-box;
     max-width: 100vw;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Petrona', serif;
     color: #D4AC0D;
 }
 
@@ -73,14 +73,9 @@ h1{
     z-index: 200;
     .draggable{
         position: absolute;
-        overflow: scroll;
-        background: black;
-        border: solid 1px white;
-        transition: 0.2s;
-        height: $dimension;
-        width: $dimension;
+        transition: z-index 0.2s;
         img{
-            width: 150%;
+            width: 100%;
         }
     }
 }
@@ -99,7 +94,7 @@ h1{
     transition: opacity 0.5s;
     z-index: 150;
     position: absolute;
-    border: 45px solid rgba(0,0,0, 0);
+    border: 75px solid rgba(156, 101, 101, 0);
     opacity: 0;
     font-size: 30px;
     font-weight: bolder;
@@ -135,4 +130,68 @@ h1{
 
 #deCleanse{
     cursor: pointer;
+}
+
+#mouse{
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cold{
+    animation: beep 2.5s infinite;
+    background: grey!important;
+}
+.warm{
+    animation: beep 1s infinite;
+    background: #D4AC0D!important;
+}
+.hot{
+    animation: beep 0.25s infinite;
+    background: black!important;
+}
+
+@keyframes beep {
+    0%{
+        opacity: 1
+    }
+    50%{
+        opacity: 0
+    }
+}
+#progress{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    background: white;
+    z-index: 1000;
+}
+#info{
+    background: #D4AC0D;
+    color: black;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#abstract{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 50vh;
+    background: grey;
+    color: white;
+    font-size: 1.5em;
+    padding: 30px;
+    display: none;
 }

@@ -12,6 +12,12 @@ currentToken = 0;
 const progressBar = document.querySelector('.progress-line');
 let progress = 0;
 
+const mouse = document.querySelector('#mouse');
+
+const info = document.querySelector('#info');
+const abstract = document.querySelector('#abstract');
+let abShow = false;
+
 
 for(i=0; i < batches.length; i++){
     // create 23 tokens
@@ -131,12 +137,33 @@ body.addEventListener('mouseover', e => {
     }
 });
 
+document.addEventListener('mousemove', e => {
+    let posX = e.clientX;
+    let posY = e.clientY;
+    let current = '#token_' + (currentToken + 1);
+    let target = document.querySelector(current);
+    let top = target.offsetTop;
+    let left = target.offsetLeft
+    let distance = Math.sqrt(Math.pow((posX-left), 2) + Math.pow((posY-top), 2));
+
+    mouse.style.top = posY -15;
+    mouse.style.left = posX - 15;
+
+    if(distance > 1000){
+        mouse.className = 'cold';
+    } else if(distance < 1000 && distance > 300){
+        mouse.className = 'warm';
+    } else if (distance < 300){
+        mouse.className = 'hot';
+    }
+})
+
 // close mask layer
 close.addEventListener('click', () => {
     hideMask();
     progression();
     if(currentToken === 10 || currentToken === 20){
-        cleanse();
+        // cleanse();
     }
 });
 
@@ -144,7 +171,20 @@ end.addEventListener('click', () => {
     deCleanse();
 });
 
-setTimeout(() => {
-    cleanse();
-}, 60000)
+// setTimeout(() => {
+//     cleanse();
+// }, 60000)
 
+info.addEventListener('click', () => {
+    abstract.style.display = 'block';
+    setTimeout(() => {
+        abShow = true;
+    }, 500)
+})
+
+body.addEventListener('click', () => {
+    if(abShow){
+        abstract.style.display = 'none';
+        abShow = false;
+    }
+})
