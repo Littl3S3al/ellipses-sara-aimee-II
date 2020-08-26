@@ -7,11 +7,13 @@ $dimension: 300px;
 body, html{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     max-width: 100vw;
     overflow-x: hidden;
     font-family: 'Petrona', serif;
     color: #D4AC0D;
+}
+body{
+    width: 90vw;
 }
 
 h1{
@@ -55,6 +57,7 @@ h1{
     z-index:10;
     opacity:1;
     mix-blend-mode: multiply;
+    cursor: none;
 }
 #barrier{
     @include fixed_full;
@@ -94,10 +97,15 @@ h1{
     transition: opacity 0.5s;
     z-index: 150;
     position: absolute;
-    border: 75px solid rgba(156, 101, 101, 0);
+    border: 100px solid rgba(156, 101, 101, 0);
+    display: none;
     opacity: 0;
     font-size: 30px;
     font-weight: bolder;
+    color: black;
+}
+#token_1{
+    display: block;
 }
 
 .draggable.is-dragging { 
@@ -194,4 +202,5 @@ h1{
     font-size: 1.5em;
     padding: 30px;
     display: none;
+    z-index: 1000;
 }

@@ -42,6 +42,6 @@ window.addEventListener('load', () => {
                 loadingScrn.classList.add('hidden');
             }, 300);
             journey.classList.remove('hidden');
-        }, 3000)
+        }, 300)
     }
 })

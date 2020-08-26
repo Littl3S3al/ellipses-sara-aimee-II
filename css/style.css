@@ -14,103 +14,103 @@
 }
 
 #token_4 {
-  top: 55%;
+  top: 45%;
   left: 51%;
 }
 
 #token_5 {
   top: 2%;
-  left: 60%;
+  left: 50%;
 }
 
 #token_6 {
   top: 11.5%;
-  left: 65%;
+  left: 55%;
 }
 
 #token_7 {
   top: 16%;
-  left: 59%;
+  left: 49%;
 }
 
 #token_8 {
   top: 9.6%;
-  left: 88%;
+  left: 78%;
 }
 
 #token_9 {
   top: 9.8%;
-  left: 86.8%;
+  left: 76.8%;
 }
 
 #token_10 {
   top: 12.4%;
-  left: 85.6%;
+  left: 75.6%;
 }
 
 #token_11 {
   top: 14.7%;
-  left: 86.3%;
+  left: 76.3%;
 }
 
 #token_12 {
   top: 14.7%;
-  left: 88.4%;
+  left: 78.4%;
 }
 
 #token_13 {
   top: 13.4%;
-  left: 92.3%;
+  left: 82.3%;
 }
 
 #token_14 {
   top: 14.2%;
-  left: 98%;
+  left: 88%;
 }
 
 #token_15 {
   top: 17.7%;
-  left: 92.6%;
+  left: 82.6%;
 }
 
 #token_16 {
   top: 18.2%;
-  left: 93.9%;
+  left: 83.9%;
 }
 
 #token_17 {
   top: 20.5%;
-  left: 93.2%;
+  left: 83.2%;
 }
 
 #token_18 {
   top: 22.7%;
-  left: 90.6%;
+  left: 80.6%;
 }
 
 #token_19 {
   top: 24.3%;
-  left: 88.5%;
+  left: 78.5%;
 }
 
 #token_20 {
   top: 23.8%;
-  left: 91.4%;
+  left: 81.4%;
 }
 
 #token_21 {
   top: 41.3%;
-  left: 94.3%;
+  left: 84.3%;
 }
 
 #token_22 {
   top: 44.4%;
-  left: 93.7%;
+  left: 83.7%;
 }
 
 #token_23 {
   top: 75%;
-  left: 93%;
+  left: 83%;
 }
 
 #progress {
@@ -184,11 +184,14 @@
 body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
   font-family: "Petrona", serif;
   color: #D4AC0D;
+}
+
+body {
+  width: 90vw;
 }
 
 h1 {
@@ -249,6 +252,7 @@ h1 {
   z-index: 10;
   opacity: 1;
   mix-blend-mode: multiply;
+  cursor: none;
 }
 
 #barrier {
@@ -298,10 +302,16 @@ h1 {
   transition: opacity 0.5s;
   z-index: 150;
   position: absolute;
-  border: 75px solid rgba(156, 101, 101, 0);
+  border: 100px solid rgba(156, 101, 101, 0);
+  display: none;
   opacity: 0;
   font-size: 30px;
   font-weight: bolder;
+  color: black;
+}
+
+#token_1 {
+  display: block;
 }
 
 .draggable.is-dragging {
@@ -410,6 +420,7 @@ h1 {
   font-size: 1.5em;
   padding: 30px;
   display: none;
+  z-index: 1000;
 }
 
 /*# sourceMappingURL=style.css.map */

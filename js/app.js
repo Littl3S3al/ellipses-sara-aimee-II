@@ -18,6 +18,8 @@ const info = document.querySelector('#info');
 const abstract = document.querySelector('#abstract');
 let abShow = false;
 
+const tspartiCanvas = document.querySelector('#tsparticles');
+
 
 for(i=0; i < batches.length; i++){
     // create 23 tokens
@@ -135,6 +137,9 @@ body.addEventListener('mouseover', e => {
             currentToken ++;
         }, 1000);
     }
+    let next = '#token_' + (currentToken + 1);
+    let nextEl = document.querySelector(next);
+    nextEl.style.display = 'block';
 });
 
 document.addEventListener('mousemove', e => {
@@ -164,6 +169,10 @@ close.addEventListener('click', () => {
     progression();
     if(currentToken === 10 || currentToken === 20){
         // cleanse();
+    }
+    if(currentToken === 23){
+        tspartiCanvas.style.cursor = 'auto';
+        mouse.style.display = 'none';
     }
 });
 
