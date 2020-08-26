@@ -168,7 +168,7 @@ close.addEventListener('click', () => {
     hideMask();
     progression();
     if(currentToken === 10 || currentToken === 20){
-        // cleanse();
+        cleanse();
     }
     if(currentToken === 23){
         tspartiCanvas.style.cursor = 'auto';
@@ -180,9 +180,9 @@ end.addEventListener('click', () => {
     deCleanse();
 });
 
-// setTimeout(() => {
-//     cleanse();
-// }, 60000)
+setTimeout(() => {
+    cleanse();
+}, 60000)
 
 info.addEventListener('click', () => {
     abstract.style.display = 'block';
