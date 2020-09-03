@@ -20,9 +20,11 @@ let abShow = false;
 
 const tspartiCanvas = document.querySelector('#tsparticles');
 
+const progressCounter = document.querySelector('.counter');
+let counter = 0;
 
-for(i=0; i < batches.length; i++){
-    // create 23 tokens
+// create 23 tokens
+for(i=0; i < batches.length; i++){  
     let token = document.createElement('DIV');
     token.innerHTML = 'x';
     token.id = 'token_' + (i+1);
@@ -30,12 +32,9 @@ for(i=0; i < batches.length; i++){
     token.dataset.played = 'false';
     token.dataset.number = i;
     body.appendChild(token);
-    // create 23 progress dots
-    let dot = `<div class='status'><div class='dot'></div></div>`;
-    progressBar.innerHTML += dot;
 };
 
-// code to open mask layer
+// function to open mask layer
 const showMask = () => {
     mask.style.width ='100vw';
     mask.style.height = '100vh';
@@ -48,7 +47,7 @@ const showMask = () => {
     progress ++;
 };
 
-// code to hide mask and delete  all content
+// function to hide mask and delete  all content
 const hideMask = () => {
     mask.style.width ='0';
     mask.style.height = '0';
@@ -61,7 +60,7 @@ const hideMask = () => {
     }, 1000);
 };
 
-// all of the images come up
+// function to make all of the images come up
 const populate = (num) => {
     let i = 0;
     let bottom = 150;
@@ -97,19 +96,8 @@ const populate = (num) => {
 }
 
 const progression = () => {
-    const dots = document.querySelectorAll('.dot');
-    const line = document.querySelector(".progress");
-
-    for(i = 0; i < progress; i++){
-        if(!dots[i].classList.contains('completed')){
-            dots[i].classList.add('completed');
-        } 
-        if(dots[i].classList.contains('current')){
-            dots[i].classList.remove('current');
-        }
-    }
-    dots[progress].classList.add('current');
-    line.style.width = (progress / (batches.length - 1) * 100) + "%";
+  counter ++;
+  progressCounter.innerText = counter + '/23';  
 }
 
 const cleanse = () => {
@@ -132,10 +120,13 @@ body.addEventListener('mouseover', e => {
         el.style.zIndex = 0;
         e.target.dataset.played = 'true';
         setTimeout(() => {
+            el.classList.add('token_after');
+        }, 1000);
+        setTimeout(() => {
             showMask();
             populate(tokenNo);
             currentToken ++;
-        }, 1000);
+        }, 2000);
     }
     let next = '#token_' + (currentToken + 1);
     let nextEl = document.querySelector(next);
